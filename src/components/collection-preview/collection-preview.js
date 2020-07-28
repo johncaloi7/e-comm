@@ -16,3 +16,5 @@ const CollectionPreview = ({items, title}) => (
 )
 
 export default CollectionPreview; 
+
+

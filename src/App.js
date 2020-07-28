@@ -46,14 +46,7 @@ class App extends React.Component {
 
 
   render() {
-    const shopee = (props) => {
-      console.log(props)
-      return(
-        <div></div>
-      )
-    }
-    
-
+  
     return (
       <div>
         <Header/>
@@ -61,7 +54,6 @@ class App extends React.Component {
           <Route exact path="/" component={HomePage}/>
           <Route path="/shop" component={ShopPage}/>
           <Route exact path="/checkout" component={CheckoutPage}/>
-          <Route path="/hats" component={shopee}/>
           <Route
             exact
             path='/signin'
