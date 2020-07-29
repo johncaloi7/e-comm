@@ -30,23 +30,21 @@ const CheckoutPage = ({ cartItems, total, currentUser }) => (
             </div>
         </div>
 
-        { currentUser ? 
-          cartItems.map(cartItem => (
-          <CheckoutItem key={cartItem.id} cartItems={cartItem}/>)) 
-          : <h2 className="if-out">Sign in to view items</h2>
-        }
-        
-        { currentUser ?
-            <div className="total">TOTAL: ${total}</div>
-            : 
-            <div className="total">TOTAL: $0</div>
-        }
+        {  cartItems.map(cartItem => (<CheckoutItem key={cartItem.id} cartItems={cartItem}/>))}
+        <div className="total">TOTAL: ${total}</div>
+            
         <div className='test-warning'>
             *Please use the following test credit card for payments*
             <br />
             4242 4242 4242 4242 - Exp: 01/22 - CVV: 123
         </div>
-        <StripeCheckoutButton price={total} />  
+        {
+            currentUser ?
+            <StripeCheckoutButton price={total} /> 
+            :
+            <h2 className="payment-terms">Log-in or Sign-up to process payment</h2>
+        }
+        
     </div>
 )
 
